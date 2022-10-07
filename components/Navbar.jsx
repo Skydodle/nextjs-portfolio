@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 const Navbar = () => {
   return (
     <div className='fixed w-full h-20 shadow-xl z-[100]'>
-      <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
+      <div className='flex justify-between items-center w-full h-full px-3 2xl:px-16'>
         <Image
           src='/../public/assets/logo.png'
           alt='/'
@@ -34,9 +35,32 @@ const Navbar = () => {
               </li>
             </Link>
           </ul>
+
+          {/*  Menu Icon */}
+          <div className='md:hidden'>
+            <AiOutlineMenu size={25} />
+          </div>
         </div>
-        {/* <div>Hello</div>
-        <div>test</div> */}
+      </div>
+      {/** Mobile Menu */}
+      {/* Overlay */}
+      <div className='fixed left-0 top-0 w-full h-screen bg-black/70'>
+        {/* Side Drawer Menu*/}
+        <div className='fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f2] p-10 ease-in duration-500'>
+          <div>
+            <div className='flex w-full items-center justify-between'>
+              <Image
+                src='/../public/assets/logo.png'
+                alt='/'
+                width='100'
+                height='100'
+              />
+              <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'>
+                <AiOutlineClose />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
